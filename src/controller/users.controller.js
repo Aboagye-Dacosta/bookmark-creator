@@ -56,11 +56,10 @@ const httpSaveUser = async (req, res) => {
 const httpLoginUser = async (req, res) => {
   const { email, password } = req.body;
 
-
   if (!(email && password)) {
     return res.status(200).json({
       status: false,
-      message: "all the fields are required",
+      message: "fields are required",
     });
   }
 
