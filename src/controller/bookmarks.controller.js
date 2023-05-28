@@ -16,6 +16,7 @@ async function httpCreateBookmark(req, res) {
 
   formData.parse(req, async (err, fields, file) => {
     if (err) {
+      console.log(err);
       return res.status(200).json({
         status: false,
         message: "sorry could not save data",
@@ -169,7 +170,6 @@ const httpDeleteBookmark = async (req, res) => {
       );
 
       const res = fs.unlinkSync(path.join(__dirname, "..", "assets", filename));
-
     } catch (error) {
       console.log(error);
       return res.status(200).json({
